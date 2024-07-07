@@ -29,7 +29,7 @@ This Django-based web application provides a platform for analyzing e-commerce p
 
 - Python 3.12
 - Django 5.0.6
-- PostgreSQL (or another supported database)
+- PostgreSQL (or another supported database) in this sqlite3 is used
 - Git (optional, for cloning the repository)
 
 ### Installation
@@ -38,7 +38,7 @@ This Django-based web application provides a platform for analyzing e-commerce p
 
    ```bash
    git clone https://github.com/ppinklesh/Stantech.git
-   cd ecommerce_data_analysis
+   cd ecommerce
    ```
 
 2. **Setup Python Virtual Environment**
