@@ -16,7 +16,7 @@ class Command(BaseCommand):
             # Check CSV file format before reading
             with open(csv_file, 'r') as f:
                 first_line = f.readline().strip()
-                required_columns = ['product_id', 'product_name', 'category', 'price', 'quantity_sold', 'rating', 'review_count']
+                required_columns = ['product_name', 'category', 'price', 'quantity_sold', 'rating', 'review_count']
                 actual_columns = first_line.split(',')
                 if not all(column in actual_columns for column in required_columns):
                     raise ValueError(f"CSV file should contain columns: {', '.join(required_columns)}")
@@ -35,15 +35,12 @@ class Command(BaseCommand):
             for _, row in df.iterrows():
                 try:
                     Product.objects.update_or_create(
-                        product_id=row['product_id'],
-                        defaults={
-                            'product_name': row['product_name'],
-                            'category': row['category'],
-                            'price': row['price'],
-                            'quantity_sold': row['quantity_sold'],
-                            'rating': row['rating'],
-                            'review_count': row['review_count'],
-                        }
+                        product_name=row['product_name'],
+                        category=row['category'],
+                        price=row['price'],
+                        quantity_sold=row['quantity_sold'],
+                        rating=row['rating'],
+                        review_count=row['review_count'],
                     )
                 except IntegrityError as e:
                     self.stderr.write(f'IntegrityError: {str(e)}')
