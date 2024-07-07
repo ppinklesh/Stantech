@@ -27,8 +27,8 @@ This Django-based web application provides a platform for analyzing e-commerce p
 
 ### Requirements
 
-- Python 3.x
-- Django 3.x
+- Python 3.12
+- Django 5.0.6
 - PostgreSQL (or another supported database)
 - Git (optional, for cloning the repository)
 
@@ -37,7 +37,7 @@ This Django-based web application provides a platform for analyzing e-commerce p
 1. **Clone the Repository**
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/ppinklesh/Stantech.git
    cd ecommerce_data_analysis
    ```
 
@@ -108,13 +108,6 @@ This Django-based web application provides a platform for analyzing e-commerce p
 
 ### Usage
 
-- Navigate to `/summary-report-csv/` to download the CSV summary report.
+- Navigate to `/summary_report_csv/` to download the CSV summary report.
+- Navigate to `/summary_report/` to display summary report.
 - Use `/signup/` and `/login/` endpoints for user registration and authentication.
-
-### Deployment
-
-- For production deployment, configure settings (`DEBUG = False`, secret keys) and deploy using appropriate server environments (e.g., Gunicorn, Nginx).
-
----
-
-This README.md file provides a comprehensive guide for setting up, configuring, and using your Django project for e-commerce data analysis and reporting. Customize the instructions and details based on your specific project requirements and deployment environment.
