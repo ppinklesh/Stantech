@@ -108,7 +108,7 @@ This Django-based web application provides a platform for analyzing e-commerce p
 
 ### Upload csv file
 - To upload .csv file for product data. follow below command:
-- Make sure the format of csv should be correct.
+- Make sure the format of csv should be correct. fields should be 'product_name', 'category', 'price', 'quantity_sold', 'rating', 'review_count'
 
   ```bash
   python manage.py upload_data products.csv
