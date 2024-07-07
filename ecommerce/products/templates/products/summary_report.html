@@ -1,0 +1,33 @@
+<!-- templates/summary_report.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary Report</title>
+</head>
+<body>
+    <h1>Summary Report</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Total Revenue</th>
+                <th>Top Product</th>
+                <th>Top Product Quantity Sold</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in summary %}
+            <tr>
+                <td>{{ row.category }}</td>
+                <td>{{ row.total_revenue }}</td>
+                <td>{{ row.top_product }}</td>
+                <td>{{ row.top_product_quantity_sold }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
