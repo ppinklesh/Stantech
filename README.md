@@ -38,7 +38,7 @@ This Django-based web application provides a platform for analyzing e-commerce p
 
    ```bash
    git clone https://github.com/ppinklesh/Stantech.git
-   cd ecommerce_data_analysis
+   cd ecommerce
    ```
 
 2. **Setup Python Virtual Environment**
