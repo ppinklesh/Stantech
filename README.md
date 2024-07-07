@@ -106,6 +106,14 @@ This Django-based web application provides a platform for analyzing e-commerce p
 
 - Access the admin interface at `http://localhost:8000/admin/` to manage users, products, and other data.
 
+### Upload csv file
+- To upload .csv file for product data. follow below command:
+- Make sure the format of csv should be correct.
+
+  ```bash
+  python manage.py upload_data products.csv
+  ```
+
 ### Usage
 
 - Navigate to `/summary_report_csv/` to download the CSV summary report.
