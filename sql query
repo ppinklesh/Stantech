@@ -1,0 +1,24 @@
+SELECT
+    c.customer_id,
+    c.customer_name,
+    c.email,
+    SUM(oi.quantity * oi.price_per_unit) AS total_spent,
+    (
+        SELECT p.category
+        FROM Orders o
+        JOIN Order_Items oi ON o.order_id = oi.order_id
+        JOIN Products p ON oi.product_id = p.product_id
+        WHERE o.customer_id = c.customer_id
+          AND o.order_date >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)
+        GROUP BY p.category
+        ORDER BY SUM(oi.quantity * oi.price_per_unit) DESC
+        LIMIT 1
+    ) AS most_purchased_category
+FROM Customers c
+JOIN Orders o ON c.customer_id = o.customer_id
+JOIN Order_Items oi ON o.order_id = oi.order_id
+JOIN Products p ON oi.product_id = p.product_id
+WHERE o.order_date >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)
+GROUP BY c.customer_id, c.customer_name, c.email
+ORDER BY total_spent DESC
+LIMIT 5;
