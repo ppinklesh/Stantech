@@ -1,8 +1,3 @@
-# Stantech
-Certainly! Here's how you can structure the README.md file for your Django project, providing a concise setup guide and overview:
-
----
-
 # E-commerce Data Analysis and Reporting System
 
 ## Overview
